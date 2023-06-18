@@ -3,7 +3,9 @@ const { ethers } = require("hardhat");
 async function main() {
   const Voting = await ethers.getContractFactory("Voting");
 
-  const Voting_ = await Voting.deploy(["Onah", "Mike", "Henry","Jude"])
+
+  //Start deployment, returning a promise that resolves to a contract onject
+  const Voting_ = await Voting.deploy(["Onah", "Mike", "Henry","Jude"], 90);
   console.log("Contract Address", Voting_.address);
 }
 
